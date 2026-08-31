@@ -1,53 +1,210 @@
-<header>
-    <h1>Toque de Seda</h1>
-    <p>Sua pele renovada e aveludada todos os dias</p>
-</header>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toque de Seda | Esfoliantes Corporais</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
-<main>
-    <section>
-        <h2>Nossos Produtos</h2>
-        
-        <article>
-            <h3>Esfoliante de Café & Macadâmia</h3>
-            <p>Ideal para firmar a pele e ativar a circulação.</p>
-            <p><strong>Preço:</strong> R$ 45,90</p>
-            <button type="button">Comprar</button>
-        </article>
+    <style>
+        :root {
+            --cor-primaria: #c99b9b;
+            --cor-secundaria: #6b705c;
+            --cor-fundo: #faf7f5;
+            --cor-card: #ffffff;
+            --cor-texto: #4a4a4a;
+        }
 
-        <article>
-            <h3>Esfoliante de Lavanda & Camomila</h3>
-            <p>Especialmente formulado para acalmar peles sensíveis.</p>
-            <p><strong>Preço:</strong> R$ 48,90</p>
-            <button type="button">Comprar</button>
-        </article>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
 
-        <article>
-            <h3>Esfoliante Tropical de Coco & Açúcar Mascavo</h3>
-            <p>Hidratação profunda para áreas mais ressecadas.</p>
-            <p><strong>Preço:</strong> R$ 42,90</p>
-            <button type="button">Comprar</button>
-        </article>
-    </section>
+        body {
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            line-height: 1.6;
+        }
 
-    <section>
-        <h2>Por que escolher a Toque de Seda?</h2>
-        <ul>
-            <li>Ingredientes 100% naturais e cruelty-free</li>
-            <li>Remove células mortas sem agredir a pele</li>
-            <li>Fórmulas ultra-hidratantes com óleos vegetais</li>
-        </ul>
-    </section>
+        /* Cabeçalho */
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(180deg, #f3ece7 0%, var(--cor-fundo) 100%);
+        }
 
-    <section>
-        <h2>Modo de Uso</h2>
-        <ol>
-            <li>Aplique o esfoliante no corpo úmido durante o banho.</li>
-            <li>Massageie suavemente com movimentos circulares.</li>
-            <li>Enxágue bem com água morna.</li>
-        </ol>
-    </section>
-</main>
+        .logo-texto {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            color: #3b3b3b;
+            margin-bottom: 5px;
+        }
 
-<footer>
-    <p>&copy; 2026 Toque de Seda. Todos os direitos reservados.</p>
-</footer>
+        .subtitulo {
+            font-size: 0.95rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--cor-secundaria);
+        }
+
+        /* Container Principal */
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #3b3b3b;
+            margin-bottom: 30px;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        /* Seção de Produtos (Grid) */
+        .produtos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        article {
+            background-color: var(--cor-card);
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        article:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        article h3 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            color: #3b3b3b;
+        }
+
+        article p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .preco {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--cor-primaria);
+            margin-bottom: 15px;
+        }
+
+        button {
+            background-color: var(--cor-primaria);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #b58585;
+        }
+
+        /* Listas Estilizadas */
+        .diferenciais, .modo-uso {
+            background-color: var(--cor-card);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+
+        ul, ol {
+            max-width: 600px;
+            margin: 0 auto;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #ede6e1;
+            font-size: 0.85rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="logo-texto">Toque de Seda</h1>
+        <p class="subtitulo">Sua pele renovada e aveludada todos os dias</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Nossos Produtos</h2>
+            <div class="produtos-grid">
+                
+                <article>
+                    <h3>Esfoliante de Café & Macadâmia</h3>
+                    <p>Ideal para firmar a pele e ativar a circulação.</p>
+                    <p class="preco">R$ 45,90</p>
+                    <button type="button">Comprar</button>
+                </article>
+
+                <article>
+                    <h3>Esfoliante de Lavanda & Camomila</h3>
+                    <p>Especialmente formulado para acalmar peles sensíveis.</p>
+                    <p class="preco">R$ 48,90</p>
+                    <button type="button">Comprar</button>
+                </article>
+
+                <article>
+                    <h3>Esfoliante Tropical de Coco & Açúcar</h3>
+                    <p>Hidratação profunda para as áreas mais ressecadas.</p>
+                    <p class="preco">R$ 42,90</p>
+                    <button type="button">Comprar</button>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="diferenciais">
+            <h2>Por que escolher a Toque de Seda?</h2>
+            <ul>
+                <li>Ingredientes 100% naturais e cruelty-free</li>
+                <li>Remove células mortas sem agredir a barreira da pele</li>
+                <li>Fórmulas ultra-hidratantes enriquecidas com óleos vegetais</li>
+            </ul>
+        </section>
+
+        <section class="modo-uso">
+            <h2>Ritual de Uso</h2>
+            <ol>
+                <li>Aplique o esfoliante no corpo úmido durante o banho.</li>
