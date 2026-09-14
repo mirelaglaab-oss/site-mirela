@@ -4,207 +4,261 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Toque de Seda | Esfoliantes Corporais</title>
+    <!-- Fonte cursiva para a marca e fonte limpa para o texto -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-
+    
     <style>
         :root {
-            --cor-primaria: #c99b9b;
-            --cor-secundaria: #6b705c;
-            --cor-fundo: #faf7f5;
-            --cor-card: #ffffff;
-            --cor-texto: #4a4a4a;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
+            --rosa-suave: #f9ecec;
+            --rosa-aquarela: #e8c5c8;
+            --tom-pele: #fdf8f5;
+            --texto-escuro: #4a3e3d;
+            --detalhe-dourado: #c5a059;
         }
 
         body {
-            background-color: var(--cor-fundo);
-            color: var(--cor-texto);
-            line-height: 1.6;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--tom-pele);
+            color: var(--texto-escuro);
         }
 
-        /* Cabeçalho */
+        /* Estilo do Logo (Estilo 3 - Aquarela Cursiva) */
         header {
             text-align: center;
-            padding: 50px 20px;
-            background: linear-gradient(180deg, #f3ece7 0%, var(--cor-fundo) 100%);
+            padding: 40px 20px;
+            background: radial-gradient(circle, var(--rosa-aquarela) 0%, var(--tom-pele) 70%);
         }
 
-        .logo-texto {
+        .logo-container {
+            display: inline-block;
+            position: relative;
+            padding: 20px 40px;
+        }
+
+        .logo-marca {
             font-family: 'Great Vibes', cursive;
             font-size: 3.5rem;
-            color: #3b3b3b;
-            margin-bottom: 5px;
+            color: var(--texto-escuro);
+            margin: 0;
+            text-shadow: 2px 2px 8px rgba(232, 197, 200, 0.6);
         }
 
-        .subtitulo {
-            font-size: 0.95rem;
-            letter-spacing: 2px;
+        .subtitulo-logo {
+            font-size: 0.85rem;
+            letter-spacing: 3px;
             text-transform: uppercase;
-            color: var(--cor-secundaria);
+            color: #7a6563;
+            margin-top: 5px;
         }
 
-        /* Container Principal */
-        main {
+        /* Seção de Produtos */
+        .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px 20px;
         }
 
-        section {
-            margin-bottom: 60px;
-        }
-
-        h2 {
+        .titulo-secao {
             text-align: center;
             font-size: 1.8rem;
-            color: #3b3b3b;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+            color: var(--texto-escuro);
             font-weight: 400;
-            letter-spacing: 1px;
         }
 
-        /* Seção de Produtos (Grid) */
-        .produtos-grid {
+        .grid-produtos {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            gap: 30px;
         }
 
-        article {
-            background-color: var(--cor-card);
+        .card-produto {
+            background-color: #ffffff;
             border-radius: 12px;
-            padding: 30px 20px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
-        article:hover {
+        .card-produto:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
 
-        article h3 {
+        /* Container da Foto do Produto */
+        .foto-produto-container {
+            width: 100%;
+            height: 250px;
+            background-color: var(--rosa-suave);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .foto-produto-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .info-produto {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .nome-produto {
             font-size: 1.2rem;
-            margin-bottom: 12px;
-            color: #3b3b3b;
+            margin: 10px 0;
+            font-weight: 600;
         }
 
-        article p {
+        .desc-produto {
             font-size: 0.9rem;
-            color: #666;
+            color: #6d5c5a;
             margin-bottom: 15px;
+            line-height: 1.4;
         }
 
-        .preco {
+        .preco-produto {
             font-size: 1.2rem;
             font-weight: 600;
-            color: var(--cor-primaria);
+            color: var(--texto-escuro);
             margin-bottom: 15px;
         }
 
-        button {
-            background-color: var(--cor-primaria);
-            color: white;
+        .btn-comprar {
+            background-color: var(--rosa-aquarela);
+            color: var(--texto-escuro);
             border: none;
             padding: 12px 25px;
             border-radius: 25px;
+            font-weight: 600;
             cursor: pointer;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: background 0.3s ease;
+            width: 100%;
+            transition: background-color 0.3s ease;
         }
 
-        button:hover {
-            background-color: #b58585;
+        .btn-comprar:hover {
+            background-color: #d8b0b4;
         }
 
-        /* Listas Estilizadas */
-        .diferenciais, .modo-uso {
-            background-color: var(--cor-card);
+        /* Seção Sobre / Benefícios */
+        .secao-info {
+            background-color: #ffffff;
             padding: 40px;
             border-radius: 12px;
+            margin-top: 50px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.03);
         }
 
-        ul, ol {
-            max-width: 600px;
-            margin: 0 auto;
-            padding-left: 20px;
+        .secao-info ul, .secao-info ol {
+            line-height: 1.8;
+            color: #5a4b49;
         }
 
-        li {
-            margin-bottom: 12px;
-        }
-
-        /* Rodapé */
         footer {
             text-align: center;
-            padding: 30px;
-            background-color: #ede6e1;
+            padding: 30px 20px;
+            background-color: var(--rosa-suave);
+            margin-top: 60px;
             font-size: 0.85rem;
-            color: #777;
+            color: #7a6563;
         }
     </style>
 </head>
 <body>
 
+    <!-- Cabeçalho com o Estilo do Logo 3 (Aquarela) -->
     <header>
-        <h1 class="logo-texto">Toque de Seda</h1>
-        <p class="subtitulo">Sua pele renovada e aveludada todos os dias</p>
+        <div class="logo-container">
+            <h1 class="logo-marca">Toque de Seda</h1>
+            <div class="subtitulo-logo">Ritual de Beleza & Esfoliação</div>
+        </div>
     </header>
 
-    <main>
+    <main class="container">
+        
+        <!-- Grid de Produtos com Fotos -->
         <section>
-            <h2>Nossos Produtos</h2>
-            <div class="produtos-grid">
+            <h2 class="titulo-secao">Nossos Esfoliantes Especiais</h2>
+            
+            <div class="grid-produtos">
                 
-                <article>
-                    <h3>Esfoliante de Café & Macadâmia</h3>
-                    <p>Ideal para firmar a pele e ativar a circulação.</p>
-                    <p class="preco">R$ 45,90</p>
-                    <button type="button">Comprar</button>
+                <!-- Produto 1 -->
+                <article class="card-produto">
+                    <div class="foto-produto-container">
+                        <!-- Substitua 'imagem-cafe.jpg' pelo caminho da sua foto -->
+                        <img src="imagem-cafe.jpg" alt="Esfoliante de Café e Macadâmia">
+                    </div>
+                    <div class="info-produto">
+                        <h3 class="nome-produto">Café & Macadâmia</h3>
+                        <p class="desc-produto">Ativa a circulação e proporciona máxima firmeza à pele com ação antioxidante.</p>
+                        <div class="preco-produto">R$ 45,90</div>
+                        <button type="button" class="btn-comprar">Adicionar ao Carrinho</button>
+                    </div>
                 </article>
 
-                <article>
-                    <h3>Esfoliante de Lavanda & Camomila</h3>
-                    <p>Especialmente formulado para acalmar peles sensíveis.</p>
-                    <p class="preco">R$ 48,90</p>
-                    <button type="button">Comprar</button>
+                <!-- Produto 2 -->
+                <article class="card-produto">
+                    <div class="foto-produto-container">
+                        <!-- Substitua 'imagem-lavanda.jpg' pelo caminho da sua foto -->
+                        <img src="imagem-lavanda.jpg" alt="Esfoliante de Lavanda e Camomila">
+                    </div>
+                    <div class="info-produto">
+                        <h3 class="nome-produto">Lavanda & Camomila</h3>
+                        <p class="desc-produto">Especialmente desenvolvido para acalmar, suavizar e relaxar peles delicadas.</p>
+                        <div class="preco-produto">R$ 48,90</div>
+                        <button type="button" class="btn-comprar">Adicionar ao Carrinho</button>
+                    </div>
                 </article>
 
-                <article>
-                    <h3>Esfoliante Tropical de Coco & Açúcar</h3>
-                    <p>Hidratação profunda para as áreas mais ressecadas.</p>
-                    <p class="preco">R$ 42,90</p>
-                    <button type="button">Comprar</button>
+                <!-- Produto 3 -->
+                <article class="card-produto">
+                    <div class="foto-produto-container">
+                        <!-- Substitua 'imagem-coco.jpg' pelo caminho da sua foto -->
+                        <img src="imagem-coco.jpg" alt="Esfoliante de Coco e Açúcar Mascavo">
+                    </div>
+                    <div class="info-produto">
+                        <h3 class="nome-produto">Coco & Açúcar Mascavo</h3>
+                        <p class="desc-produto">Nutrição ultraprofunda e renovação celular intensa para áreas ressecadas.</p>
+                        <div class="preco-produto">R$ 42,90</div>
+                        <button type="button" class="btn-comprar">Adicionar ao Carrinho</button>
+                    </div>
                 </article>
 
             </div>
         </section>
 
-        <section class="diferenciais">
-            <h2>Por que escolher a Toque de Seda?</h2>
+        <!-- Informações Adicionais -->
+        <section class="secao-info">
+            <h2>Diferenciais Toque de Seda</h2>
             <ul>
-                <li>Ingredientes 100% naturais e cruelty-free</li>
-                <li>Remove células mortas sem agredir a barreira da pele</li>
-                <li>Fórmulas ultra-hidratantes enriquecidas com óleos vegetais</li>
+                <li><strong>Ingredientes Naturais:</strong> Fórmulas ricas em óleos vegetais e livres de microplásticos.</li>
+                <li><strong>Textura Aveludada:</strong> Esfoliação na medida certa que hidrata enquanto renova.</li>
+                <li><strong>Sustentável:</strong> Produtos cruelty-free com embalagens recicláveis.</li>
             </ul>
+
+            <h2>Como Aplicar no Seu Ritual</h2>
+            <ol>
+                <li>Durante o banho, aplique uma quantidade generosa sobre a pele úmida.</li>
+                <li>Faça movimentos circulares suaves, com foco nas regiões mais ressecadas (cotovelos, joelhos e calcanhares).</li>
+                <li>Enxágue completamente com água morna e sinta a maciez imediata.</li>
+            </ol>
         </section>
 
-        <section class="modo-uso">
-            <h2>Ritual de Uso</h2>
-            <ol>
-                <li>Aplique o esfoliante no corpo úmido durante o banho.</li>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Toque de Seda. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
